@@ -25,19 +25,19 @@ const MediaCard = props => {
             <Typography style={{borderBottom: '0.5px solid grey', padding: 5}} gutterBottom variant='h5' align='center' component='h5'>
               {props.name}
             </Typography>
-            <Typography align='center' variant="p">
+            <Typography align='center'>
               Height: {props.height}  
             </Typography>
-            <Typography align='center' variant="p">
+            <Typography align='center'>
               Mass: {props.mass} 
             </Typography>
-            <Typography align='center' variant="p">
+            <Typography align='center'>
               Hair Color: {props.hair_color}  
             </Typography>
-            <Typography align='center' variant="p">
+            <Typography align='center'>
               Skin Color: {props.skin_color} 
             </Typography>
-            <Typography align='center' variant="p">
+            <Typography align='center'>
               Birth Year: {props.birth_year} 
             </Typography>
           </CardContent>

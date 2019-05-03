@@ -6,11 +6,11 @@ const CardsList = ({ cards }) => {
   
   return (
       <Grid container direction="row" justify="space-evenly">
-        { cards.map(({name, height, mass, hair_color, skin_color, birth_year, i})  => {
+        { cards.map(({name, height, mass, hair_color, skin_color, birth_year})  => {
           return ( <MediaCard 
-            key={i}
+            key={name}
             name={name}
-            height={height} 
+            height={height}
             mass={mass} 
             hair_color={hair_color}
             skin_color={skin_color}

@@ -1,23 +1,31 @@
 import React, { Component } from 'react'
-import Card from './Card';
+import CardsList from './CardsList'
 
 class App extends Component {
   state = {
-    items: ''
+    people: [],
+    searchField: ''
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/people/1/')
+    const urls = [
+      'https://swapi.co/api/people/',
+			'https://swapi.co/api/people/?page=2', 
+			'https://swapi.co/api/people/?page=3',
+			'https://swapi.co/api/people/?page=4',
+			'https://swapi.co/api/people/?page=5',
+			'https://swapi.co/api/ppeople?page=6',
+			'https://swapi.co/api/people/?page=7'
+    ]
+
+    fetch('https://swapi.co/api/people/')
       .then(response => response.json())
-      .then(data => this.setState({ items: data.name }))
+      .then(data => this.setState({ people: data.results }))
   }
 
   render() {
     return (
-      <div>
-        <Card name={this.state.items} />
-        <Card name={this.state.items} />
-      </div>
+      <CardsList cards={this.state.people}/>
     )
   }
 }

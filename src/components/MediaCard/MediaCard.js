@@ -1,4 +1,5 @@
 import React from 'react';
+import './MediaCard.css'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -12,8 +13,12 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   card: {
     maxWidth: 345,
-    margin: 12, 
+    margin: 12,
+    opacity: 0.9 
   },
+  typography:{
+    fontSize: 17.5,
+  }
 };
 
 const MediaCard = props => {
@@ -23,21 +28,21 @@ const MediaCard = props => {
         <CardActionArea>
           <CardContent>
             <Typography style={{borderBottom: '0.5px solid grey', padding: 5}} gutterBottom variant='h5' align='center' component='h5'>
-              {props.name}
+              <strong>{props.name}</strong>
             </Typography>
-            <Typography align='center'>
+            <Typography className={classes.typography} align='center'>
               Height: {props.height}  
             </Typography>
-            <Typography align='center'>
+            <Typography className={classes.typography} align='center'>
               Mass: {props.mass} 
             </Typography>
-            <Typography align='center'>
+            <Typography className={classes.typography} align='center'>
               Hair Color: {props.hair_color}  
             </Typography>
-            <Typography align='center'>
+            <Typography className={classes.typography} align='center'>
               Skin Color: {props.skin_color} 
             </Typography>
-            <Typography align='center'>
+            <Typography className={classes.typography} align='center'>
               Birth Year: {props.birth_year} 
             </Typography>
           </CardContent>

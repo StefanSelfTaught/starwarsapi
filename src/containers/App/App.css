@@ -1,0 +1,10 @@
+@font-face {
+  font-family: StarWars;
+  src: url(../../assets/fonts/Starjout.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: StarWars2;
+  src: url(../../assets/fonts/Starjedi.ttf) format("truetype");
+}
+

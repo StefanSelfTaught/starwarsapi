@@ -14,7 +14,7 @@ const styles = {
   card: {
     maxWidth: 345,
     margin: 12,
-    opacity: 0.9 
+    opacity: 0.90
   },
   typography:{
     fontSize: 17.5,

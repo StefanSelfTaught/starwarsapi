@@ -10,7 +10,6 @@ const styles = theme => ({
   },
 });
 
-
 const ScrollUp = (props) => {
   const { classes } = props;
   return (

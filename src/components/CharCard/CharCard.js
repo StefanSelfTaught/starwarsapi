@@ -1,5 +1,5 @@
 import React from 'react';
-import './MediaCard.css'
+import './CharCard.css'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -14,14 +14,14 @@ const styles = {
   card: {
     maxWidth: 345,
     margin: 12,
-    opacity: 0.90
+    opacity: 0.85
   },
   typography:{
     fontSize: 17.5,
   }
 };
 
-const MediaCard = props => {
+const CharCard = props => {
     const { classes } = props;
     return (
       <Card className={classes.card}>
@@ -56,8 +56,8 @@ const MediaCard = props => {
     );
 }
 
-MediaCard.propTypes = {
+CharCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(MediaCard);
+export default withStyles(styles)(CharCard);

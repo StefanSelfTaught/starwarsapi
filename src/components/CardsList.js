@@ -1,5 +1,5 @@
 import React from 'react'
-import MediaCard from './MediaCard/MediaCard'
+import CharCard from './CharCard/CharCard'
 import Grid from '@material-ui/core/Grid';
 
 const CardsList = ({ people }) => {
@@ -9,7 +9,7 @@ const CardsList = ({ people }) => {
         {people.map(({name, height, mass, hair_color, skin_color, birth_year})  => {
           return ( 
           <Grid item xs={8} sm={5} md={4} lg={3} xl={2}>
-            <MediaCard 
+            <CharCard 
               key={name}
               name={name}
               height={height}

@@ -4,11 +4,13 @@ import CardsList from '../../components/CardsList'
 import SearchBox from '../../components/SearchBox/SearchBox'
 import ScrollUp from '../../components/ScrollUp';
 import Titles from '../../components/Titles'
+import Spinner from '../../components/Spinner/Spinner'
 
 class App extends Component {
   state = {
     people: [],
-    searchField: ''
+    searchField: '',
+    loading: true
   }
 
   componentDidMount() {
@@ -19,7 +21,6 @@ class App extends Component {
 			'https://swapi.co/api/people/?page=4',
 			'https://swapi.co/api/people/?page=5',
     ]
-
     // const firstUrl = fetch('https://swapi.co/api/people/').then(res => res.json())
     // const secondUrl = fetch('https://swapi.co/api/people/?page=2').then(res => res.json())
     //  Promise.all([firstUrl, secondUrl])
@@ -40,7 +41,7 @@ class App extends Component {
         .flat()
         .sort((a, b) => a.name.localeCompare(b.name));
       
-      this.setState({people: sortedArrayOfPlanets})
+      this.setState({people: sortedArrayOfPlanets, loading: false})
     }))
     .catch(error =>   
       alert('Something went wrong:', error)
@@ -48,7 +49,6 @@ class App extends Component {
   }
 
   handleSearch = event => {
-    event.preventDefault()
     this.setState({
       searchField: event.target.value
     })
@@ -60,14 +60,17 @@ class App extends Component {
       .toLowerCase()
       .includes(this.state.searchField.toLowerCase())
     })
+
+    let cards = <CardsList people={filteredArr}/>
+    if(this.state.loading){
+      cards = <Spinner />
+    }
     return (
       <Fragment>
         <ScrollUp />
         <Titles />
         <SearchBox searchChange={this.handleSearch} />
-        <CardsList 
-          people={filteredArr}  
-          />
+        {cards}
       </Fragment>
       
     )

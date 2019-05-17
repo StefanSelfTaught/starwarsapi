@@ -13,7 +13,7 @@ const styles = theme => ({
 const ScrollUp = (props) => {
   const { classes } = props;
   return (
-    <ScrollToTop style={{zIndex: 9999, bottom: 15, right: 20}} easing="easeInOutCirc" duration={350} showUnder={130}>
+    <ScrollToTop style={{zIndex: 9999, bottom: 15, right: 20}} easing="easeInOutCirc" duration={550} showUnder={130}>
        <Fab color="primary" aria-label="Add" className={classes.fab}>
          <ArrowUpward />
        </Fab>

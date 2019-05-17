@@ -60,7 +60,7 @@ const SearchBox = props => {
               notchedOutline: classes.notchedOutline,
             },
           }}
-          label="Search Robots..."
+          label="Search Characters..."
           variant="outlined"
           id="custom-css-outlined-input"
        />

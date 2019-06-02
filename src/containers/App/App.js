@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react'
+import React, {Component, Fragment} from 'react'
 import './App.css'
 import CardsList from '../../components/CardsList'
-import SearchBox from '../../components/SearchBox/SearchBox'
 import ScrollUp from '../../components/ScrollUp';
 import Titles from '../../components/Titles'
 import Spinner from '../../components/Spinner/Spinner'
+import AppBar from '../../components/AppBar'
 
 class App extends Component {
   state = {
@@ -19,17 +19,11 @@ class App extends Component {
 			'https://swapi.co/api/people/?page=2', 
 			'https://swapi.co/api/people/?page=3',
 			'https://swapi.co/api/people/?page=4',
-			'https://swapi.co/api/people/?page=5',
+      'https://swapi.co/api/people/?page=5',
+      'https://swapi.co/api/people/?page=6',
+      'https://swapi.co/api/people/?page=7',
+      'https://swapi.co/api/people/?page=8',
     ]
-    // const firstUrl = fetch('https://swapi.co/api/people/').then(res => res.json())
-    // const secondUrl = fetch('https://swapi.co/api/people/?page=2').then(res => res.json())
-    //  Promise.all([firstUrl, secondUrl])
-    //   .then(data => data.map(url => {
-    //     console.log(url.results)
-    //     this.setState({
-    //       people:url.results
-    //     })
-    //   }))
 
     Promise.all(urls.map(async url => {
       const response = await fetch(url);
@@ -68,8 +62,8 @@ class App extends Component {
     return (
       <Fragment>
         <ScrollUp />
+        <AppBar searchChange={this.handleSearch}/>
         <Titles />
-        <SearchBox searchChange={this.handleSearch} />
         {cards}
       </Fragment>
       

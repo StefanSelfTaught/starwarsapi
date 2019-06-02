@@ -13,11 +13,17 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   card: {
     maxWidth: 345,
+    transition: 'all 0.15s ease',
     margin: 12,
-    opacity: 0.85
+    opacity: 0.85,
+    boxShadow: '10px 10px 10px 1px rgba(0,0,0,0.21)',
+    '&:hover': {
+      transform: 'scale(1.05)',
+      opacity: 0.90,
+    }
   },
-  typography:{
-    fontSize: 17.5,
+    typography:{
+      fontSize: 17.5,
   }
 };
 
@@ -44,6 +50,9 @@ const CharCard = props => {
             </Typography>
             <Typography className={classes.typography} align='center'>
               Birth Year: {props.birth_year} 
+            </Typography>
+            <Typography className={classes.typography} align='center'>
+              Eye Color: {props.eye_color} 
             </Typography>
           </CardContent>
         </CardActionArea>

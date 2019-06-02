@@ -5,7 +5,7 @@ const Titles = () => {
   return (
       <div>
         <Typography 
-            style={{fontFamily:'StarWars', color:'#f0f0f0', fontSize: 80, marginTop: 40}} 
+            style={{fontFamily:'StarWars', color:'#f0f0f0', fontSize: 80, marginTop: 20}} 
             align='center' 
             variant="h1" 
             gutterBottom>
@@ -15,7 +15,7 @@ const Titles = () => {
           fontFamily:'StarWars2', 
           color:'black', 
           fontSize: 45, 
-          marginBottom: 105,
+          marginBottom: 150,
           textShadow: '-2px 0 white, 0 2px white, 2px 0 white, 0 -2px white'
           }} 
           align='center' variant="h1" gutterBottom>
